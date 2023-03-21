@@ -1,0 +1,13 @@
+import firstViewer from './index2.js';
+const signal = firstViewer.signal;
+const signal2 = firstViewer.signal2;
+signal.chartName = "chart";
+signal.plotSignal();
+document.getElementById('play').addEventListener('click',signal.play);
+document.getElementById('pause').addEventListener('click',signal.pause);
+document.getElementById('changeTitle').addEventListener('click',()=>{signal.changeTitle(document.getElementById('title').value)});
+document.getElementById('statistics').addEventListener('click',signal.showStat);
+document.getElementById('color').addEventListener('change',signal.changeColor);
+document.getElementById('file').addEventListener('change',()=>signal.startReadFile('file'));
+document.getElementById('speedup').addEventListener('click',()=>{ signal.changeSpeed(10); });
+document.getElementById('speeddown').addEventListener('click',()=>{ signal.changeSpeed(-10); });

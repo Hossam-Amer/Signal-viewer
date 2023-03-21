@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signal Viewer</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.2.1/dist/chart.umd.min.js"></script>
+    <link href="../Jquery/javascript.js">
+    <script src="{{ url_for('static', filename='plotly.main.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.2.3/jspdf.plugin.autotable.min.js"></script>
+</head>
+
+<body>
+    <div>
+        <p class="title"> Welcome to Signal Viewer </p>
+    </div>
+    <div class="cont">
+        <div>
+            <p class="SubTitle">First Viewer</p>
+            <br>    
+            <br>
+            <input type="file" name="file" id="file" class="inputfile" accept=".csv" />
+            <label for="file">Choose a file</label>
+            <br>
+            <br>
+            <div class="PlayPause">
+                <button id="play" style="background-color: rgb(47, 47, 148);">Play</button>
+                <button style="background-color: rgb(47, 47, 148);" id="pause">Pause</button>
+            </div>
+
+            <div class="SpeedUpDown">
+                <button id="speedup">- 10</button>
+                <button id="speeddown">+ 10</button>
+            </div>
+
+            <br>
+            <input type="color" name="color" id="color">
+            <br>
+
+            <button id="stat" style="background-color: #747684;">Show Stats</button>
+            <div>
+                <input type="text" id="title"  style="background-color: #747684;" class="inputtitle">
+                <button id="changeTitle" style="background-color:  rgb(47, 47, 148);">Change Title</button>
+            </div>
+
+
+        
+            <p id="warning"></p>
+            <div class="link">
+                <label for="chkbox" style="font-size: larger;">Link</label>
+                <input type="checkbox" class="chkbox" id="chkbox">
+            </div>
+            
+        </div>
+        <div id="chart" class="chart" width="350" height="200"> </div>
+    </div>
+
+    <div class="cont">
+        <div>
+            <p id="counter2"></p>
+            <p class="SubTitle">Second Viewer</p>
+            <br>
+            <br>
+            <input type="file" name="file" id="file2" class="inputfile"  accept=".csv" />
+            <label for="file2">Choose a file</label>
+            <br>
+            <br>
+            <div class="PlayPause">
+                <button id="play2" style="background-color: rgb(47, 47, 148);">Play</button>
+                <button style="background-color: rgb(47, 47, 148);" id="pause2">Pause</button>
+            </div>
+
+            <div class="SpeedUpDown">
+                <button id="speedup2">- 10</button>
+                <button id="speeddown2">+ 10</button>
+            </div>
+
+            <br>
+
+            <input type="color" name="color" id="color2">
+
+            <br>
+            <button id="statistics2" style="background-color: #747684">Show Stats</button>
+            <div>
+                <input type="text" id="title2" class="inputtitle" style="background-color: #747684;">
+                <button id="changeTitle2">Change Title</button>
+            </div>
+
+            
+            <p id="warning"></p>
+
+        </div>
+        <div id="chart2" class="chart" width="350" height="200"> </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='index.js') }}"></script>
+</body>
+
+</html>
